@@ -1,0 +1,32 @@
+.carousel-container{
+    background-color: #E6DDFF;
+    margin: 0 3% 0 3%;
+    padding: 10% 1%;
+    border-radius: 12px;
+}
+
+.carousel-container > *{
+    display: flex;
+    justify-content: center;
+
+}
+
+.carousel-title{
+    font-size: 18px;
+}
+
+.carousel-icon{
+    width: 100px;
+}
+
+.carousel-temperature{
+    font-size: 30px;
+}
+
+.carousel-parameter{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin: 5% 0 0 0;
+}
+
