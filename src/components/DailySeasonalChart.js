@@ -86,7 +86,7 @@ export function DailySesaonalChart(){
           data={data}
           layout={ {title: 'Seasonal Component - Daily'} }
           useResizeHandler={true}
-          style = {{width: "100%", height: "25%"}}
+          style = {{width: "100%", height: "100%"}}
         />
     )
 }
