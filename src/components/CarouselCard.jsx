@@ -15,9 +15,6 @@ function CarouselCard() {
             <div className='carousel-parameter'><WiHumidity /> 35%</div>
             <div className='carousel-parameter'><WiCloudy /> 50%</div>
             <div className='carousel-parameter'><WiSolarEclipse />45% / 50%</div>
-
-
-
         </div>
     )
 }

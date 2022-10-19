@@ -35,6 +35,12 @@ function CarouselContainer() {
             <CarouselCard />
             <CarouselCard />
             <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
         </Carousel>
     )
 }
