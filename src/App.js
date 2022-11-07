@@ -1,17 +1,20 @@
-import Overview from "./components/Overview";
-import DailyVisualization from "./components/DailyVisualization";
+import {Home} from './components/Home'
 import { Dashboard } from "./components/Dashboard";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { Header } from './components/Header';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Overview/>} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dailyvisualization" element={<DailyVisualization/>}/>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Header/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+    
   );
 }
 

@@ -9,7 +9,7 @@ import { RadarChart } from './RadarChart';
 export function Dashboard(){
 
     return(
-        <>
+        <div className='container-fluid p-1 dashboard'>
             <div className='row m-4 h-25'>
                 <div className='col-4'>
                     <div className='container shadow bg-white rounded-3'>
@@ -44,6 +44,6 @@ export function Dashboard(){
                     </div>
                 </div>
             </div>
-        </>   
+        </div>   
     )
 }

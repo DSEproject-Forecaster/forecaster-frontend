@@ -39,7 +39,15 @@ export function Correlations(){
     return(
         <Plot
           data={data}
-          layout={ {aspectratio: {x: 1, y: 1, z: 0.7}, aspectmode: 'manual', updatemenus: updatemenus, title: 'Correlations', autosize: false, margin: {t: 80, l:120}} }
+          layout={{
+                aspectratio: {x: 1, y: 1, z: 0.7},
+                aspectmode: 'manual',
+                updatemenus: updatemenus,
+                title: 'Correlations',
+                // autosize: false,
+                margin: {t: 80, l:120},
+                yaxis: {tickangle: -35}
+            }}
           useResizeHandler={true}
           style = {{width: "100%", height: "100%"}}
         />

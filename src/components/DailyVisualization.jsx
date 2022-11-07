@@ -85,7 +85,7 @@ function DailyVisualization() {
         <div >
             <Form className=' my-3'>
             <Row className='SelectWeatherComponent'>
-                <Col className='text-right  ' >
+                <Col className='text-right' >
                     <Form.Label>Weather Component</Form.Label>
                 </Col>
                 <Col>
