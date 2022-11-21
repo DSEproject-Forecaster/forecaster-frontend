@@ -1,3 +1,32 @@
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+
+export function Header(){
+    return(
+        <>
+        <Navbar variant="dark" className='shadow color-nav'>
+            <Container fluid>
+                <Navbar.Brand href="/">
+                    <img
+                    alt=""
+                    src="/cloudy.png"
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top"
+                    />{' '}
+                    Forecaster
+                </Navbar.Brand>
+                <Nav className="me-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+                <Nav.Link href="#about">About</Nav.Link>
+                </Nav>
+            </Container>
+        </Navbar>
+        </>
+    )
+}
 import React, {useState} from 'react';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
@@ -9,23 +38,3 @@ export function Header(){
     const toggleNav = () => {
         setNavState(!navState);
     }
-
-    return(
-        <Navbar color="dark" expand="md" dark>
-            <div className="container">
-                <NavbarToggler onClick={toggleNav} />
-                {/* <NavbarBrand href="/"><img src='../../public/cloudy.png' height="40" width="40" alt='Forecaster' /></NavbarBrand> */}
-                <Collapse isOpen={navState} navbar>
-                    <Nav className="me-auto" navbar>
-                        <NavItem>
-                            <NavLink className="nav-link"  to='/'><span className="fa fa-home fa-lg"></span> Home</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="nav-link"  to='/dashboard'><span className="fa fa-home fa-lg"></span> Dashboard </NavLink>
-                        </NavItem>
-                    </Nav>
-                </Collapse>
-            </div>
-        </Navbar>
-    )
-}

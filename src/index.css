@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
-.bg {
-  background-color:#E6DDFF;
+.dashboard{
+    background-color: #E6DDFF;
+}
+
+.color-nav{
+  background-color: #9b78fd;
 }

@@ -1,0 +1,12 @@
+.navigation{
+    background-color: black;
+    color: azure;
+}
+
+.brand{
+    color: white;
+}
+
+.navigation-menu{
+    display: inline;
+}
