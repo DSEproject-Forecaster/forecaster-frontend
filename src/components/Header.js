@@ -27,14 +27,3 @@ export function Header(){
         </>
     )
 }
-import React, {useState} from 'react';
-import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
-
-export function Header(){
-
-    const [navState, setNavState] = useState(false);
-
-    const toggleNav = () => {
-        setNavState(!navState);
-    }
