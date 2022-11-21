@@ -1,19 +1,20 @@
-import { Routes, Route } from "react-router-dom";
-
-import NavBar from "./components/NavBar";
-
-import Home from "./pages/Home";
-import Analysis from "./pages/Analysis";
+import {Home} from './components/Home'
+import { Dashboard } from "./components/Dashboard";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { Header } from './components/Header';
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="analysis" element={<Analysis />} />
-      </Routes>
+      <Header/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
     </>
+    
   );
 }
 

@@ -1,0 +1,13 @@
+.container-dailyVisualize{
+    max-height: 425px;
+    background-color: #E6DDFF;
+    margin: 1% 2% 1%;
+    border-radius: 15px;
+    padding: 1% 3% 1% 3%;
+}
+
+.SelectWeatherComponent{
+    display:block;
+    text-align: center;
+    padding-bottom: 1%;
+}
