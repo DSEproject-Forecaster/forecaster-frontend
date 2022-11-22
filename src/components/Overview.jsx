@@ -1,23 +1,36 @@
-import React from 'react'
-import '../css/overview.css'
-import { OverviewSubComponent } from './OverviewSubComponent'
-import { OverviewSummary } from './OverviewSummary'
-import dummyData from "./OverviewData.json"
+import React, {useEffect, useState} from 'react';
+import '../css/overview.css';
+import { OverviewSubComponent } from './OverviewSubComponent';
+import { OverviewSummary } from './OverviewSummary';
+import { getComment } from '../Utils/getComment';
+import axios from 'axios';
+import dummyData from "../json/carouselData.json";
 
-const attributes= ["Dewpoint", "Wind", "Humidity", "Cloud Cover", "Radiation", "Pressure"]
+const attributes = ["dewpoint", "windspeed", "humidity", "cloudcover", "rad1", "rad2", "pressure"]
+const attributeNames = ["Dewpoint", "Wind", "Humidity", "Cloud Cover", "Thermal Radiation", "Solar Radiation", "Pressure"]
+const units = ["°C", "kmph", "%", "%", "", "", "kPa"]
+
 function Overview() {
+
+    const [data, setData] = useState(dummyData);
+
+    useEffect(() => {
+      axios.get(`http://127.0.0.1:5050/dashboard/getPredictions/`)
+      .then(res => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log("Could not fetch predictions")
+      })}, [])
+
     return (
         <div className='container-overview'>
-            {/* TODO: Update props of the OverviewSummary */}
-            {/* TODO: Fetch data from the backend - Can use same api as caraousel data*/}
-            <OverviewSummary temp="30" comment="Sunny"/>
+            <OverviewSummary {...data[5]} comment={getComment(data[5])}/>
             <div className="feature-values">
-                {dummyData.map((e, i) => {
-                    return <OverviewSubComponent key={i} name={attributes[i]} value={e.value} comment={e.comment}/>
+                {data.map((e, i) => {
+                    return <OverviewSubComponent key={i} name={attributeNames[i]} value={e[attributes[i]]} unit={units[i]} comment={e.comment}/>
                 })}
             </div>
-
-
         </div>
     )
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { getIcon } from '../Utils/getIcon';
 
 export function OverviewSummary(props){
 
@@ -14,8 +15,7 @@ export function OverviewSummary(props){
 
     return (
         <div className="summery">
-            {/* TODO: Change icon according to data */}
-            <img src='./icons/01d.png' className="overview-icon" alt='overview icon' />
+            <img src={getIcon(props.comment)} className="overview-icon" alt='overview icon' />
             <div className="overview">
                 <div className="date-time">{getDateTime()}</div>
                 <div className="temperature mt-1">{props.temp}°</div>

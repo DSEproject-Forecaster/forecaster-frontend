@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselCard from './CarouselCard';
 import "../css/carouselContainer.css"
-import dummyData from "./carouselData.json"
+import { getComment } from '../Utils/getComment';
+import axios from 'axios';
+import dummyData from "../json/carouselData.json";
 
 function CarouselContainer() {
     const responsive = {
@@ -24,11 +26,23 @@ function CarouselContainer() {
             items: 3
         }
     };
+
+    const [data, setData] = useState(dummyData);
+
+    useEffect(() => {
+      axios.get(`http://127.0.0.1:5050/dashboard/getPredictions/`)
+      .then(res => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log("Could not fetch predictions")
+      })}, [])
+
+
     return (
         <Carousel responsive={responsive} className="container-carousel">
-            {/* TODO: Fetch data from the backend */}
-            {dummyData.map((e,i) => {
-                return <CarouselCard key={i} temp={e.temp} time={e.time} windspeed={e.windspeed} cloud={e.windspeed} humidity={e.humidity} rad1={e.rad1} rad2={e.rad2}/>
+            {data.map((e,i) => {
+                return <CarouselCard key={i} temp={e.temp} time={e.time} windspeed={e.windspeed} cloud={e.windspeed} humidity={e.humidity} rad1={e.rad1} rad2={e.rad2} comment={getComment(e)}/>
             })}
         </Carousel>
     )
