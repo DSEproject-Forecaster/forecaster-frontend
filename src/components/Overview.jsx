@@ -25,7 +25,7 @@ function Overview() {
 
     return (
         <div className='container-overview'>
-            <OverviewSummary {...data[5]} comment={getComment(data[5])}/>
+            <OverviewSummary {...data[0]} comment={getComment(data[0])}/>
             <div className="feature-values">
                 {data.map((e, i) => {
                     return <OverviewSubComponent key={i} name={attributeNames[i]} value={e[attributes[i]]} unit={units[i]} comment={e.comment}/>
