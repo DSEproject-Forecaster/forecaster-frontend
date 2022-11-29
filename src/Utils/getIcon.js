@@ -5,11 +5,14 @@ export function getIcon(comment){
         case "Sunny":
             iconPath="icons/animated/day.svg"
             break;
-        case "Cloudy":
-            iconPath="icons/animated/cloudy.svg"
+        case "Cloudy Day":
+            iconPath="icons/animated/cloudy-day-2.svg"
             break;
-        case "Night":
-            iconPath="icons/animated/cloudy.svg"
+        case "Cloudy Night":
+            iconPath="icons/animated/cloudy-night-2.svg"
+            break;
+        case "Clear":
+            iconPath="icons/animated/night.svg"
             break;
         default:
             break;

@@ -30,7 +30,7 @@ function CarouselContainer() {
     const [data, setData] = useState(dummyData);
 
     useEffect(() => {
-      axios.get(`http://127.0.0.1:5050/dashboard/getPredictions/`)
+      axios.get(`http://127.0.0.1:5050/forecasts/getPredictions/`)
       .then(res => {
         setData(res.data);
       })
@@ -42,7 +42,7 @@ function CarouselContainer() {
     return (
         <Carousel responsive={responsive} className="container-carousel">
             {data.map((e,i) => {
-                return <CarouselCard key={i} temp={e.temp} time={e.time} windspeed={e.windspeed} cloud={e.windspeed} humidity={e.humidity} rad1={e.rad1} rad2={e.rad2} comment={getComment(e)}/>
+                return <CarouselCard key={i} temp={e.temperature} time={e.time_stamp} windspeed={e.wind_speed} cloud={e.total_cloud_cover} humidity={e.relative_humidity} rad1={e.surface_solar_radiation} rad2={e.surface_thermal_radiation} comment={getComment(e)}/>
             })}
         </Carousel>
     )

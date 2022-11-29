@@ -6,16 +6,16 @@ import { getComment } from '../Utils/getComment';
 import axios from 'axios';
 import dummyData from "../json/carouselData.json";
 
-const attributes = ["dewpoint", "windspeed", "humidity", "cloudcover", "rad1", "rad2", "pressure"]
-const attributeNames = ["Dewpoint", "Wind", "Humidity", "Cloud Cover", "Thermal Radiation", "Solar Radiation", "Pressure"]
-const units = ["°C", "kmph", "%", "%", "", "", "kPa"]
+const attributes = ["dewpoint_temperature", "mean_sea_level_pressure", "relative_humidity", "surface_solar_radiation", "surface_thermal_radiation", "total_cloud_cover", "wind_speed"]
+const attributeNames = ["Dewpoint", "Pressure", "Humidity", "Solar Radiation", "Thermal Radiation", "Cloud Cover", "Wind"]
+const units = ["°C", "kPa", "%", "", "", "%", "kmph"]
 
 function Overview() {
 
     const [data, setData] = useState(dummyData);
 
     useEffect(() => {
-      axios.get(`http://127.0.0.1:5050/dashboard/getPredictions/`)
+      axios.get(`http://127.0.0.1:5050/forecasts/getPredictions/`)
       .then(res => {
         setData(res.data);
       })
@@ -28,7 +28,8 @@ function Overview() {
             <OverviewSummary {...data[0]} comment={getComment(data[0])}/>
             <div className="feature-values">
                 {data.map((e, i) => {
-                    return <OverviewSubComponent key={i} name={attributeNames[i]} value={e[attributes[i]]} unit={units[i]} comment={e.comment}/>
+                  console.log(getComment(e));
+                    return <OverviewSubComponent key={i} name={attributeNames[i]} value={e[attributes[i]]} unit={units[i]}/>
                 })}
             </div>
         </div>

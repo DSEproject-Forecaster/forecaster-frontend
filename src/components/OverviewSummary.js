@@ -20,7 +20,7 @@ export function OverviewSummary(props){
             <div className="overview">
                 <div> <MdLocationOn/> Clayton, Victoria</div>
                 <div className="date-time mt-2">{getDateTime()}</div>
-                <div className="temperature mt-1">{props.temp}°</div>
+                <div className="temperature mt-1">{props.temperature}°C</div>
                 <div className="description mt-3">{props.comment}</div>
             </div>
         </div>

@@ -5,7 +5,6 @@ export function OverviewSubComponent(props) {
         <div className="feature">
             <div className="feature-title">{props.name}</div>
             <div className="feature-value">{props.value}<span className='feature-unit'>{props.unit}</span></div>
-            <div className="feature-description">{props.comment}</div>
         </div>
     )
 }
