@@ -6,7 +6,7 @@ import { getIcon } from '../Utils/getIcon';
 function CarouselCard(props) {
     return (
         <div className='carousel-container'>
-            <div className='carousel-title'>{props.time}</div>
+            <div className='carousel-title'>{props.time.substring(11,16)}</div>
             <div>
                 <img src={getIcon(props.comment)}   className="carousel-icon" alt='overview icon' /> 
             </div>
