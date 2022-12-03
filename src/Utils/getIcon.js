@@ -1,5 +1,4 @@
-export function getIcon(comment){
-    // TODO: Complete implementation
+function getIcon(comment){
     let iconPath = "";
     switch (comment) {
         case "Sunny":
@@ -19,3 +18,5 @@ export function getIcon(comment){
     }
     return iconPath;
 }
+
+module.exports = {getIcon};

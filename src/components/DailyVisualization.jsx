@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
-import { Form, Button, Row, Col } from "react-bootstrap";
-import dummydata from './dailyWeatherData.json';
+import { Form, Row, Col } from "react-bootstrap";
+import dummydata from '../json/carouselData.json';
 import '../css/dailyVisualization.css';
 import axios from 'axios';
 import {
