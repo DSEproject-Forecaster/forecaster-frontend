@@ -1,8 +1,8 @@
-export function getComment(data){
-    // TODO: generate comment
+function getComment(data){
     const dayTimeStart = 6;
     const dayTimeEnd = 18;
-    if ((data.time_stamp.substring(11,13) > dayTimeStart) && (data.time_stamp.substring(11,13) < dayTimeEnd)){
+    const curHour = parseInt(data.time_stamp.substring(11,13))
+    if ((dayTimeStart <= curHour) && (dayTimeEnd > curHour)){
         if (data.total_cloud_cover > 50){
             return "Cloudy Day";
         } else {
@@ -16,3 +16,5 @@ export function getComment(data){
         }
     }
 }
+
+module.exports = {getComment};
