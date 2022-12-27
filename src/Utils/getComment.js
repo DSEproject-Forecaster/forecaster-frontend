@@ -23,7 +23,7 @@ function getComment(data) {
   }
 
   if (data.wind_speed > 117) {
-    comment += ", Hurricane Force";
+    comment += ", Hurricane";
   } else if (data.wind_speed > 88) {
     comment += ", Storm";
   } else if (data.wind_speed > 62) {

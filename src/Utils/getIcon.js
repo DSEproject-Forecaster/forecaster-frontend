@@ -2,133 +2,39 @@ function getIcon(comment) {
   let iconPath = "";
   let comment_list = comment.split(",");
 
+  // Clear Night
+  if (comment_list.includes("Clear")) {
+    iconPath = "icons/animated/night.svg";
+  }
   if (comment_list.includes("Partially Cloudy")) {
-    if (
-      comment_list.includes("Light Breeze") ||
-      comment_list.includes("Breeze")
-    ) {
-      iconPath = "icons/animated/partly-cloudy-day-haze.svg";
-    } else if (
-      comment_list.includes("Strong Breeze") ||
-      comment_list.includes("Gale")
-    ) {
-      iconPath = "icons/animated/wind.svg";
-    } else if (
-      comment_list.includes("Storm") ||
-      comment_list.includes("Hurricane Force")
-    ) {
-      iconPath = "icons/animated/tornado.svg";
-    } else {
-      iconPath = "icons/animated/cloud-day-3.svg";
-    }
-  } else if (comment_list.includes("Cloudy")) {
-    if (
-      comment_list.includes("Light Breeze") ||
-      comment_list.includes("Breeze")
-    ) {
-      iconPath = "icons/animated/partly-cloudy-day-haze.svg";
-    } else if (
-      comment_list.includes("Strong Breeze") ||
-      comment_list.includes("Gale")
-    ) {
-      iconPath = "icons/animated/wind.svg";
-    } else if (
-      comment_list.includes("Storm") ||
-      comment_list.includes("Hurricane Force")
-    ) {
-      iconPath = "icons/animated/tornado.svg";
-    } else {
-      iconPath = "icons/animated/cloudy.svg";
-    }
-  } else if (comment_list.includes("Sunny")) {
-    if (
-      comment_list.includes("Light Breeze") ||
-      comment_list.includes("Breeze")
-    ) {
-      iconPath = "icons/animated/partly-cloudy-day-haze.svg";
-    } else if (
-      comment_list.includes("Strong Breeze") ||
-      comment_list.includes("Gale")
-    ) {
-      iconPath = "icons/animated/wind.svg";
-    } else if (
-      comment_list.includes("Storm") ||
-      comment_list.includes("Hurricane Force")
-    ) {
-      iconPath = "icons/animated/tornado.svg";
-    } else {
-      iconPath = "icons/animated/day.svg";
-    }
-  } else if (comment_list.includes("Cloudy Night")) {
-    if (
-      comment_list.includes("Light Breeze") ||
-      comment_list.includes("Breeze")
-    ) {
-      iconPath = "icons/animated/partly-cloudy-day-haze.svg";
-    } else if (
-      comment_list.includes("Strong Breeze") ||
-      comment_list.includes("Gale")
-    ) {
-      iconPath = "icons/animated/wind.svg";
-    } else if (
-      comment_list.includes("Storm") ||
-      comment_list.includes("Hurricane Force")
-    ) {
-      iconPath = "icons/animated/tornado.svg";
-    } else {
-      iconPath = "icons/animated/cloudy.svg";
-    }
-  } else if (comment_list.includes("Partially Cloudy Night")) {
-    if (
-      comment_list.includes("Light Breeze") ||
-      comment_list.includes("Breeze")
-    ) {
-      iconPath = "icons/animated/partly-cloudy-day-haze.svg";
-    } else if (
-      comment_list.includes("Strong Breeze") ||
-      comment_list.includes("Gale")
-    ) {
-      iconPath = "icons/animated/wind.svg";
-    } else if (
-      comment_list.includes("Storm") ||
-      comment_list.includes("Hurricane Force")
-    ) {
-      iconPath = "icons/animated/tornado.svg";
-    } else {
-      iconPath = "icons/animated/cloudy-night-3.svg";
-    }
+    iconPath = "icons/animated/cloudy-day.svg";
   }
-  // clear
-  else {
-    if (
-      comment_list.includes("Light Breeze") ||
-      comment_list.includes("Breeze")
-    ) {
-      iconPath = "icons/animated/partly-cloudy-day-haze.svg";
-    } else if (
-      comment_list.includes("Strong Breeze") ||
-      comment_list.includes("Gale")
-    ) {
-      iconPath = "icons/animated/wind.svg";
-    } else if (
-      comment_list.includes("Storm") ||
-      comment_list.includes("Hurricane Force")
-    ) {
-      iconPath = "icons/animated/tornado.svg";
-    } else {
-      iconPath = "icons/animated/night.svg";
-    }
+  if (comment_list.includes("Partially Cloudy Night")) {
+    iconPath = "icons/animated/cloudy-night.svg";
   }
-
-  // temperature
-  if (comment_list.includes("Hot")) {
-    iconPath = "icons/animated/thermometer.svg";
-  } else if (comment_list.includes("Hot")) {
+  if (comment_list.includes("Cloudy")) {
+    iconPath = "icons/animated/overcast.svg";
+  }
+  if (comment_list.includes("Sunny")) {
+    iconPath = "icons/animated/day.svg";
+  }
+  if (comment_list.includes("Hurricane") || comment_list.includes("Storm")) {
+    iconPath = "icons/animated/tornado.svg";
+  }
+  if (comment_list.includes("Strong Breeze") || comment_list.includes("Gale")) {
+    iconPath = "icons/animated/wind.svg";
+  }
+  if (comment_list.includes("Freezing")) {
+    iconPath = "icons/animated/snowflake.svg";
+  }
+  if (comment_list.includes("very Cold")) {
+    iconPath = "icons/animated/thermometer-colder.svg";
+  }
+  if (comment_list.includes("Swelting")) {
     iconPath = "icons/animated/thermometer-warmer.svg";
   }
 
-// 
-
+  //
 
   return iconPath;
 }
