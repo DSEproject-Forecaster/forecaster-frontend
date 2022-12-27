@@ -14,3 +14,15 @@
     justify-content: space-between;
     flex: 2;
 }
+
+.value{
+    font-size: 1em;
+}
+
+.date{
+    font-size: 1em;
+}
+
+.heading{
+    color: #8a69e4;
+}

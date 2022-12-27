@@ -1,6 +1,7 @@
 import React from 'react';
-import { WiSandstorm, WiHumidity, WiCloudy, WiSolarEclipse } from "react-icons/wi";
+import { WiSandstorm, WiHumidity, WiCloudy, WiSolarEclipse, WiThermometer } from "react-icons/wi";
 import '../css/weeklyPredictions.css';
+import { getIcon } from '../Utils/getIcon';
 
 export function WeeklyCard(props) {
     const convertDate = (timestamp) => {
@@ -21,21 +22,22 @@ export function WeeklyCard(props) {
     return (
         <div className='container container-center shadow my-3'>
             <div>
-                <div>
+                <div className='date'>
                 {convertDate(props.timestamp)}
                 </div>
                 <div>
-                {convertTime(props.timestamp)}
+                    <img src={getIcon(props.comment)} className="carousel-icon" alt='overview icon' /> 
+                </div>
+                <div className='date'>
+                    {convertTime(props.timestamp)}
                 </div>
             </div>
-            {/* <div>
-                <img src={getIcon(props.comment)}   className="carousel-icon" alt='overview icon' /> 
-            </div> */}
-            <div>{props.temp}°C</div>
-            <div><WiSandstorm /> {props.windspeed} kmph</div>
-            <div><WiHumidity /> {props.humidity}%</div>
-            <div><WiCloudy /> {props.cloud}%</div>
-            <div><WiSolarEclipse />{props.rad1} / {props.rad2}</div>
+            
+            <div className='value'><WiThermometer/>{props.temp}°C</div>
+            <div className='value'><WiSandstorm /> {props.windspeed} kmph</div>
+            <div className='value'><WiHumidity /> {props.humidity}%</div>
+            <div className='value'><WiCloudy /> {props.cloud}%</div>
+            <div className='value'><WiSolarEclipse />{props.rad1} / {props.rad2}</div>
         </div>
     )
 }

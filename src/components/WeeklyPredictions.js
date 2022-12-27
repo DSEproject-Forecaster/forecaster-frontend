@@ -20,10 +20,14 @@ export function WeeklyPredictions() {
 
 
     return (
-        <div class="container-fluid mt-5">
-            {data.map((e,i) => {
-                return <WeeklyCard key={i} temp={e.temperature} timestamp={e.time_stamp} windspeed={e.wind_speed} cloud={e.total_cloud_cover} humidity={e.relative_humidity} rad1={e.surface_solar_radiation} rad2={e.surface_thermal_radiation}/>
-            })}
+        <div class="container-fluid mt-3">
+        <h1 className='heading text-center mb-5 mt-5'>Forecast for the next 7 days</h1>
+            <div className='row'>
+                {data.map((e,i) => {
+                    return <div className='col-4'><WeeklyCard key={i} temp={e.temperature} timestamp={e.time_stamp} windspeed={e.wind_speed} cloud={e.total_cloud_cover} humidity={e.relative_humidity} rad1={e.surface_solar_radiation} rad2={e.surface_thermal_radiation} comment={getComment(e)}/></div>
+                })}
+            </div>
+            
         </div>
     )
 }
