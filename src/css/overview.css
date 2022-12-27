@@ -17,17 +17,25 @@
 }
 
 .date-time{
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .overview{
     
 }
 
+.location{
+    font-size: 12px;
+}
 .temperature{
     font-size: 96px;
     font-weight: 300;
+}
+
+.temperature span{
+    font-size: 96px;
+    font-weight: 100;
 }
 
 .feature-unit{
@@ -38,6 +46,10 @@
     width: 175px;
 }
 
+.feature{
+    padding-left: 0px;
+}
+
 .feature-values{
     display: flex;
     justify-content: space-between;
@@ -45,7 +57,7 @@
 }
 
 .feature-title{
-    font-size: 20px;
+    font-size: 12px;
 }
 
 .feature-value{
