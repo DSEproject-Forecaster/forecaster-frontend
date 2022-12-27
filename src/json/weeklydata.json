@@ -1,0 +1,13 @@
+[
+    {
+        "timestamp":"",
+        "dewpoint_temperature": "25",
+        "mean_sea_level_pressure": "102",
+        "avg_wind_speed":"50",
+        "avg_cloud_cover":"75",
+        "relative_humidity":"35",
+        "avg_surface_solar_radiation":"50",
+        "avg_surface_thermal_radiation":"65",
+        "temperature":"27"
+    }
+]
